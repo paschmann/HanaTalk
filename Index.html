@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html data-sap-ui-dk-category="Controls/UX3Controls" >
+    <head>
+        <title></title>
+        <script id="sap-ui-bootstrap"
+    			src="../sap/ui5/1/resources/sap-ui-core.js"
+                data-sap-ui-theme="sap_goldreflection"
+				data-sap-ui-libs="sap.ui.commons">
+		</script>
+        <script src="client.js"></script>
+    </head>
+    <body>
+        <table style='width: 90%;' border=1>
+        <tr>
+            <td style='width: 25%;'>.executeScalar</td>
+            <td style='width: 25%;'>.executeRecordSet</td>
+            <td style='width: 25%;'>.executeRecordSetObj</td>
+            <td style='width: 25%;'>.executeChange</td>
+        </tr>
+        <tr>
+            <td><div id='resp1'></div></td>
+            <td><div id='resp2'></div></td>
+            <td><div id='resp3'></div></td>
+            <td><div id='resp4'></div></td>
+        </tr>
+        </table>
+        
+        <script type="text/javascript">
+		
+		var hana = new HanaTalk('SYS');
+        
+        document.getElementById("resp1").innerHTML = hana.executeRecordSet("SELECT 1 FROM DUMMY");
+        document.getElementById("resp2").innerHTML = hana.executeRecordSet("SELECT TOP 5 * FROM M_HOST_INFORMATION");
+        document.getElementById("resp3").innerHTML = hana.executeRecordSetObj("SELECT TOP 5 * FROM M_HOST_INFORMATION");
+		document.getElementById("resp4").innerHTML = /*hana.executeChange("UPDATE .... ") + */ ' Record Changed';
+        
+        
+			
+		</script>
+        
+    </body>
+    </html>
