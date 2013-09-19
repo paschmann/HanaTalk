@@ -33,7 +33,7 @@ var result = hana.executeRecordSet("SELECT 1 FROM DUMMY");
 
 document.getElementById("SomeElementID").innerHTML = result;
 
-<b>A few more examples</b>
+<b>A few more examples</b> 
 
 - Insert/Update/Delete a record - use .executeChange, this will execute your code and respond with the records which have been updated
 
