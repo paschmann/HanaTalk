@@ -58,3 +58,10 @@ As you can see, making these types of calls is fairly simple and since your file
 <b>Security:</b> Because you are passing your SQL text directly from your browser to the backend server, you open yourself up to SQL Injection hacks. Technically, we are not parsing URL arguments/parameters into the server side DB request but rather entire statements. In order for us to hack this, you could simply change the URL request to include some devious SQL.
 
 <b>Speed:</b> For simplicity and to avoid AJAX Callbacks, the execution is performed Synchronously (i.e. We wait for the server to completely respond before we continue processing). The good: Code is "inline" and easy to manipulate the response/results from the server. The Bad: if we do a Select * on a massive (read billion) row table, the entire window is locked/hung until it either times out or completes. Not a particularly nice behaving UI.
+
+License
+----
+
+HANATalk for SAP HANA is available under the MIT license.
+
+Copyright © 2014 Paul Aschmann
